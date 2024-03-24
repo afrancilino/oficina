@@ -1,0 +1,118 @@
+/*--------------TODAS AS PÁGINAS-----------------------------------------------------------------------------------------*/
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    /*---CASO NÃO SE USE MAIS O FUNDO DE IMAGEM, ESTA É A COR QUE FICARÁ---*/
+    background-color: #f4f4f4;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/*--------------REFERENTE AO BRASÃO DA PÁGINA PRINCIPAL E AS BARRAS SUPERIOR E INFERIOR----------------------------------*/
+
+#logoImg{
+    position: relative;
+    margin-top: -9%;
+    margin-left: 40%;
+}
+
+#botaoLogin{
+    margin-top: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#fundo {
+    background-color:#0d47a1;
+    padding-top: 0px;
+}
+
+/*--------------OUTROS SELETORES-----------------------------------------------------------------------------------------*/
+
+/*---POSIÇÃO DOS ITENS DA PRIMEIRA PÁGINA---*/
+.home{
+    position: sticky;
+    top:25%;
+}
+
+/*---CENTRALIZAR TÍTULOS DOS CARDS---*/
+.centralizar{
+    text-align: center;
+}
+
+/*--------------TOOLTIP---------------------*/
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 450px;
+  background-color: #bbdefb;
+  text-align: justify;
+  border-radius: 15px;
+  padding: 10px;
+  position: absolute;
+  z-index: 99;
+  top: 100%;
+  left: 0%;
+  margin-left: -60px;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-delay: 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.botao{
+    position: relative;
+}
+
+#recuperarSenha {
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: #1a73e8;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: .25px;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: inherit;
+    outline: 0;
+    padding: 0;
+    text-align: left;
+}
+
+#carregando {
+    z-index: 1002;
+    display: block;
+    opacity: 0.5;
+    position: fixed;
+    z-index: 999;
+    top: -25%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 125%;
+    width: 100%;
+    background: #000;
+    display: none;
+    will-change: opacity;
+}
+
+#carregar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 99;
+}
