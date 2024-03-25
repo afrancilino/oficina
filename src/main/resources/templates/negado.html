@@ -1,0 +1,18 @@
+<div th:replace="~{topo :: cabecalho}"></div>
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<main> <br>
+    <h2 class="center-align">Francilino Eletr&ocirc;nica</h2>
+	<h3 class="center-align">Prezado usu&aacute;rio, voc&ecirc; n&atilde;o tem credenciais para esta consulta.</h3>
+	<section class="container">
+		<div class="row col s12">
+			    <h4 class="center-align">
+				 	<strong class="red-text"><br>Acesso Negado!<br><br></strong>
+					 Caso necessite de acesso nesta se&ccedil;&atilde;o, entre em contato com os Administradores.
+				</h4>
+            </div>
+		</div>
+    </section>
+</main>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<div th:replace="~{rodape :: rodape}"></div>

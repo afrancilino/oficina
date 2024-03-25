@@ -1,0 +1,58 @@
+<div th:replace="~{topo :: cabecalho}"></div>
+<script type="text/javascript" src="js/sha256.js" /></script>
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<div sec:authorize="isAuthenticated()">
+	<script>
+		location.replace("index");
+	</script>
+</div>
+<main>
+	<br>
+    <h2 class="center-align">Francilino Eletr&ocirc;nica</h2>
+	<h3 class="center-align">Login</h3>
+	<br>
+	<section class="container">
+		<div class="row col s12">
+			<form action="#" th:action="@{/logon}" method="post">
+				<div class="card col s6 offset-s3">
+
+<!--Primeira Linha-->
+					<div class="row">
+						<p class="card-title centralizar" >Digite seu Nome de Usu&aacute;rio e sua senha</p>
+						<p class="center-align red-text" th:text="${error}"></p>
+                        <br>
+						<div class="input-field col s8 offset-s2">
+							<input type="text" name="nomeUsuario" id="nomeUsuario" onkeypress='return SomenteNumero(event)' required="true"/>
+							<label for="nip">Nome de Usu&aacute;rio</label>
+						</div>
+					</div>
+
+<!--Segunda Linha-->
+
+					<div class="row">
+						<div class="input-field col s8 offset-s2">
+							<input type="password" name="senha" id="senha" required="true"/>
+							<label for="senha">Senha</label>
+						</div>
+					</div>
+
+<!--Terceira Linha-->	
+					<div class="row">
+						<div class="input-field col s8 offset-s2">
+							<a class="btn-floating btn-medium waves-effect waves-light left" href="home">
+								<i class="material-icons">clear</i>
+							</a>
+							
+							<button class="btn-floating btn-medium waves-effect waves-light right" id="logar" type="submit">
+								<i class="material-icons">send</i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+</main>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<div th:replace="~{rodape :: rodape}"></div>

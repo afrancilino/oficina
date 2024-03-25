@@ -1,0 +1,14 @@
+<div th:replace="~{topo :: cabecalho}"></div>
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<main>
+    <section class="container home">
+        <br>
+        <!--img id="logoImg" src="imagens/brasao.png" width="20%" alt="logoLeao"-->
+        <h1 class="center-align">Francilino Eletr&ocirc;nica</h1>
+        <h3 class="center-align">Honestidade e Profissionalismo</h3>
+        <h3 class="center-align red-text" th:text="${usuario}"></h3>
+    </section>
+</main>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<div th:replace="~{rodape :: rodape}"></div>

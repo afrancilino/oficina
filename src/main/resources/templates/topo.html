@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR" th:fragment="cabecalho">
+
+<head>
+    <title>Francilino Eletr&otilde;nica</title>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="materialize/css/font-google.css" />
+    <link rel="stylesheet" type="text/css" href="materialize/css/materialize.min.css" media="screen,projection" />
+    <link rel="icon" type="image/png" href="imagens/brasao.png" />
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js" /></script>
+    <script type="text/javascript" src="js/jquery-mask.js" /></script>
+    <script type="text/javascript" src="js/jquery-maskmoney.js" /></script>
+    <script type="text/javascript" src="materialize/js/materialize.min.js" /></script>
+    <script type="text/javascript" src="js/oficina/oficinaJquery.js" /></script>
+</head>
+
+<body>
+    <header>
+        <div sec:authorize="isAuthenticated()">
+            <ul id="dropdownCadastro" class="dropdown-content">
+                <li><a href="cadastraCliente">Cliente</a></li>
+                <li><a href="cadastraProduto">Produto</a></li>
+                <li><a href="cadastraOrdemServico">Ordem de Servi&ccedil;o</a></li>
+                <li><a href="cadastraFuncionario">Funcion&aacute;rio</a></li>
+            </ul>
+
+            <ul id="dropdownConsulta" class="dropdown-content">
+                <li><a href="consultaCliente">Cliente</a></li>
+                <li><a href="consultaProduto">Produto</a></li>
+                <li><a href="consultaOrdemServico">Ordem de Servi&ccedil;o</a></li>
+                <li><a href="consultaFuncionario">Funcion&aacute;rio</a></li>
+            </ul>
+
+            <ul id="dropdownRelatorio" class="dropdown-content">
+                <li><a href="relatorioMembro">Cliente</a></li>
+                <li><a href="relatorioVisitante">Produto</a></li>
+                <li><a href="relatorioBatizando">Ordem de Servi&ccedil;o</a></li>
+                <li><a href="relatorioMinisterio">Funcion&aacute;rio</a></li>
+            </ul>
+        </div>
+
+        <div sec:authorize="!isAuthenticated()">
+            <div class="navbar-fixed z-depth-5">
+                <nav id="fundo">
+                    <div class="nav-wrapper">
+                        <a href="login" id="botaoLogin" class="waves-effect waves-light btn right">Login</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div sec:authorize="isAuthenticated()">
+            <div class="navbar-fixed z-depth-5">
+                <nav id="fundo">
+                    <div class="nav-wrapper">
+                        <ul id="nav-mobile" class="right hide-on-med-and-down">
+                            <li><a href="index">Home</a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="dropdownCadastro">Cadastro<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="dropdownConsulta">Consulta<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a class="dropdown-button" href="#!" data-activates="dropdownRelatorio">Relat&oacute;rios<i class="material-icons right">arrow_drop_down</i></a></li>
+                            <li><a href="alteraUsuario?id=">Meus Dados</a></li>
+                            <li><a href="alteraSenha?id=">Alterar Senha </a></li>
+                            <li><a href="logout" id="botaoLogin" class="waves-effect waves-light btn right">Sair</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
